@@ -29,9 +29,10 @@ export default {
   methods: {
     add: function () {
       this.$store.dispatch("add", this.content);
+      this.content = "";
     },
-    remove() {
-      this.$store.dispatch("remove", this.content);
+    remove(index) {
+      this.$store.dispatch("remove", index);
     },
   },
 };

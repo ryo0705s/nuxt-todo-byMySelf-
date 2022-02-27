@@ -9,9 +9,8 @@ const createStore = () => {
     mutations: {
       add: function (state, todo) {
         state.todos.push(todo);
-        state.todo = "";
       },
-      remove(state, todo, index) {
+      remove(state, index) {
         state.todos.splice(index, 1);
       },
     },
