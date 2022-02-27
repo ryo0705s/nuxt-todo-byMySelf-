@@ -9,12 +9,18 @@ const createStore = () => {
     mutations: {
       add: function (state, todo) {
         state.todos.push(todo);
-        // this.todo = "";
+        state.todo = "";
+      },
+      remove(state, todo, index) {
+        state.todos.splice(index, 1);
       },
     },
     actions: {
       add({ commit }, content) {
         commit("add", content);
+      },
+      remove({ commit }, todo) {
+        commit("remove", todo);
       },
     },
   });

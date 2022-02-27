@@ -4,7 +4,10 @@
     <input v-model="content" />
     <button @click="add">追加</button>
     <ul>
-      <li v-for="(hoge, index) in getTodos" :key="index">{{ hoge }}</li>
+      <li v-for="(hoge, index) in getTodos" :key="index">
+        {{ hoge }}
+        <button @click="remove(index)">削除</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -26,6 +29,9 @@ export default {
   methods: {
     add: function () {
       this.$store.dispatch("add", this.content);
+    },
+    remove() {
+      this.$store.dispatch("remove", this.content);
     },
   },
 };
