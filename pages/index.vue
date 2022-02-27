@@ -4,13 +4,13 @@
     <input v-model="content" />
     <button @click="add">追加</button>
     <ul>
-      <li v-for="(item, index) in todos" :key="index">{{ item }}</li>
+      <li v-for="(hoge, index) in getTodos" :key="index">{{ hoge }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapState } from "Vuex";
+// import { mapState } from "Vuex";
 export default {
   data() {
     return {
@@ -18,11 +18,14 @@ export default {
     };
   },
   computed: {
-    ...mapState["todos"],
+    getTodos() {
+      return this.$store.getters.getTodos;
+    },
+    // ...mapState["todos"],
   },
   methods: {
     add: function () {
-      this.$store.commit(`add`, this.item);
+      this.$store.dispatch("add", this.content);
     },
   },
 };
