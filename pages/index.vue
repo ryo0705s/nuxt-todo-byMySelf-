@@ -22,6 +22,15 @@
       </v-flex>
       <v-btn outline round class="green green-text darken-2">2万円~</v-btn>
     </v-app>
+    <v-menu>
+      <template v-slot:activator="{ on }">
+        <v-btn v-on="on">Open</v-btn>
+        <v-btn color="primary" dark v-on="on">Dropdown</v-btn>
+      </template>
+      <v-list>
+        <v-list-item>"teust"</v-list-item>
+      </v-list>
+    </v-menu>
   </div>
 </template>
 
