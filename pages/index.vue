@@ -7,6 +7,9 @@
       <li v-for="(hoge, index) in getTodos" :key="index">
         {{ hoge }}
         <button @click="remove(index)">削除</button>
+        <button @click="edit(index)">編集</button>
+        <input v-model="edition" />
+        <button @click="edited(index)">更新</button>
       </li>
     </ul>
   </div>
@@ -33,6 +36,9 @@ export default {
     },
     remove(index) {
       this.$store.dispatch("remove", index);
+    },
+    edit(index) {
+      this.$store.dispatch("edit", index);
     },
   },
 };

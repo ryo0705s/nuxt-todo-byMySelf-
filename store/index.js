@@ -13,6 +13,10 @@ const createStore = () => {
       remove(state, index) {
         state.todos.splice(index, 1);
       },
+      edit(state, index, newTodo) {
+        state.todos.splice(index, 1, newTodo);
+        newTodo = todos[index];
+      },
     },
     actions: {
       add({ commit }, content) {
@@ -20,6 +24,9 @@ const createStore = () => {
       },
       remove({ commit }, todo) {
         commit("remove", todo);
+      },
+      edit({ commit }, hoge) {
+        commit("edit", hoge);
       },
     },
   });
