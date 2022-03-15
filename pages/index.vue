@@ -12,6 +12,16 @@
         <button @click="edited(index)">更新</button>
       </li>
     </ul>
+    <v-app>
+      <v-flex xs6>
+        <v-card>
+          <v-card-title class="font-weight-bold"
+            >新規会員登録フォーム(3分で完了)</v-card-title
+          >
+        </v-card>
+      </v-flex>
+      <v-btn outline round class="green green-text darken-2">2万円~</v-btn>
+    </v-app>
   </div>
 </template>
 
