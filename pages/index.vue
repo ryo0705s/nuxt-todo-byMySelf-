@@ -24,13 +24,17 @@
     </v-app>
     <v-menu>
       <template v-slot:activator="{ on }">
-        <v-btn v-on="on">Open</v-btn>
+        <v-btn v-on="on">Opens</v-btn>
         <v-btn color="primary" dark v-on="on">Dropdown</v-btn>
       </template>
       <v-list>
-        <v-list-item>"teust"</v-list-item>
+        <v-list-tile href="http://google.co.jp">teust</v-list-tile>
+        <v-list-item to="/">teust</v-list-item>
       </v-list>
     </v-menu>
+    <v-btn fixed fab bottom right color="#BDBDBD88" style="bottom: 100px">
+      <v-icon color="white">mdi-chevron-up</v-icon>
+    </v-btn>
   </div>
 </template>
 
